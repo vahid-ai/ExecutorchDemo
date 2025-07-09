@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.executorchllamademo.network.FeastApiClient
+import com.example.executorchllamademo.network.FeatureResponse
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -104,7 +105,7 @@ class MainActivity : AppCompatActivity() {
     private fun displayResults(response: FeatureResponse) {
         val formattedResult = buildString {
             appendLine("🎯 FEAST FEATURES RETRIEVED")
-            appendLine("=" * 40)
+            appendLine("=".repeat(40))
             appendLine()
 
             appendLine("📊 Features:")
@@ -128,7 +129,7 @@ class MainActivity : AppCompatActivity() {
     private fun displayError(exception: Throwable) {
         val errorMessage = buildString {
             appendLine("❌ ERROR OCCURRED")
-            appendLine("=" * 40)
+            appendLine("=".repeat(40))
             appendLine()
             appendLine("Error: ${exception.message}")
             appendLine()
